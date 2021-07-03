@@ -1,18 +1,24 @@
-import React from 'react'
-import { Nav,Navbar} from 'react-bootstrap'
+import React from "react";
+import { LinkContainer } from "react-router-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 function Header() {
-    
-    return (
-        <div>
-        <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">ProShop</Navbar.Brand>
+  return (
+    <div>
+      <Navbar bg="dark" variant="dark">
+        <LinkContainer to="/">
+          <Navbar.Brand>ProShop</Navbar.Brand>
+        </LinkContainer>
         <Nav className="ml-auto">
-          <Nav.Link href="/cart" className='fas fa-shopping-cart '> Cart</Nav.Link>
-          <Nav.Link href="/signin" className='fas fa-user'> SIGNIN</Nav.Link>
+          <LinkContainer to='/cart'>
+            <Nav.Link><i className="fas fa-shopping-cart "></i> Cart</Nav.Link>
+          </LinkContainer>
+          <LinkContainer to=''>
+            <Nav.Link><i className="fas fa-user"></i> SIGNIN</Nav.Link>
+          </LinkContainer>
         </Nav>
       </Navbar>
-        </div>
-    )
+    </div>
+  );
 }
 
-export default Header
+export default Header;
